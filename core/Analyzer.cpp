@@ -20,6 +20,8 @@
 #include "../rules/HSCAI.2.3/ConstCastAwayQualifierRule.h"
 #include "../rules/HSCAI.2.5/ReinterpretCastRule.h"
 #include "../rules/HSCAI.2.6/InvalidCastToPointerRule.h"
+#include "../rules/HSCAI.18.1/OverlappingCopyRule.h"
+
 Analyzer::Analyzer() {}
 
 void Analyzer::registerRules() {
@@ -44,6 +46,8 @@ void Analyzer::registerRules() {
     rules.push_back(std::make_unique<ConstCastAwayQualifierRule>());
     rules.push_back(std::make_unique<ReinterpretCastRule>());
     rules.push_back(std::make_unique<InvalidCastToPointerRule>());
+    rules.push_back(std::make_unique<OverlappingCopyRule>());
+
     
 }
 
