@@ -4,6 +4,7 @@
 #include "../rules/HSCAA.2.1/UnusedVariableCheck.h"
 #include "../rules/HSCAA.2.2/UnusedParameterCheck.h"
 #include "../rules/HSCAA.2.3/UnusedTypeCheck.h"
+#include "../rules/HSCAA.2.4/UnusedFunctionCheck.h"
 
 Analyzer::Analyzer() {}
 
@@ -13,6 +14,7 @@ void Analyzer::registerRules() {
     rules.push_back(std::make_unique<UnusedVariableCheck>());
     rules.push_back(std::make_unique<UnusedParameterCheck>());
     rules.push_back(std::make_unique<UnusedTypeCheck>());
+    rules.push_back(std::make_unique<UnusedFunctionCheck>());
 }
 
 void Analyzer::setupMatchers() {
