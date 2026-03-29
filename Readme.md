@@ -36,8 +36,8 @@ target_link_libraries(jargon-master
 
 ## Build
 
-cmake -G Ninja -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
-ninja
+1. cmake -G Ninja -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
+2. ninja
 
 ## Test
 
