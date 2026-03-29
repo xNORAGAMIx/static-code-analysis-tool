@@ -14,6 +14,8 @@
 #include "../rules/HSCAN.3.1/VirtualSpecifierCheck.h"
 #include "../rules/HSCAN.3.2/VirtualFunctionDefaultArgsCheck.h"
 #include "../rules/HSCAS.1.1/ExceptionPointerCheck.h"
+#include "../rules/HSCAS.4.1/ExceptionNoexceptCheck.h"
+
 Analyzer::Analyzer() {}
 
 void Analyzer::registerRules() {
@@ -32,6 +34,7 @@ void Analyzer::registerRules() {
     rules.push_back(std::make_unique<VirtualSpecifierCheck>());
     rules.push_back(std::make_unique<VirtualFunctionDefaultArgsCheck>());
     rules.push_back(std::make_unique<ExceptionPointerCheck>());
+    rules.push_back(std::make_unique<ExceptionNoexceptCheck>());
 
 }
 
