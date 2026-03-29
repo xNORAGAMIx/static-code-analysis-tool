@@ -10,6 +10,7 @@
 #include "../rules/HSCAG.8.4/RefQualifierCheck.h"
 #include "../rules/HSCAP.1.1/DynamicTypeUsageCheck.h"
 #include "../rules/HSCAP.1.2/BaseInitializationCheck.h"
+#include "../rules/HSCAP.1.3/ExplicitConstructorCheck.h"
 
 
 Analyzer::Analyzer() {}
@@ -26,6 +27,7 @@ void Analyzer::registerRules() {
     rules.push_back(std::make_unique<RefQualifierCheck>());
     rules.push_back(std::make_unique<DynamicTypeUsageCheck>());
     rules.push_back(std::make_unique<BaseInitializationCheck>());
+    rules.push_back(std::make_unique<ExplicitConstructorCheck>());
 }
 
 void Analyzer::setupMatchers() {
