@@ -72,4 +72,7 @@ sudo apt install -y build-essential cmake ninja-build git
 sudo apt install -y llvm-dev clang libclang-dev clang-tools
 ```
 
-
+### RULES AND PROGRESS - GOOGLE DOCS
+```
+https://docs.google.com/document/d/1G1QU9SAc30Ln2xjnRvo3pRjKRV3J0R3-S8BAYjIJUHI/edit?tab=t.fwe032of2ziy
+```
