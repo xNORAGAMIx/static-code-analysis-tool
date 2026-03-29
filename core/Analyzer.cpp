@@ -16,6 +16,7 @@
 #include "../rules/HSCAN.1.2/VirtualInheritanceMismatchCheck.h"
 #include "../rules/HSCAN.3.4/MemberFunctionPointerComparisonCheck.h"
 #include "../rules/HSCAR.8.1/FunctionTemplateSpecializationCheck.h"
+#include "../rules/HSCAS.4.1/NoexceptCheck.h"
 
 
 Analyzer::Analyzer() {}
@@ -38,6 +39,7 @@ void Analyzer::registerRules() {
     rules.push_back(std::make_unique<VirtualInheritanceMismatchCheck>());
     rules.push_back(std::make_unique<MemberFunctionPointerComparisonCheck>());
     rules.push_back(std::make_unique<FunctionTemplateSpecializationCheck>());
+    rules.push_back(std::make_unique<NoexceptCheck>());
 }
 
 void Analyzer::setupMatchers() {
