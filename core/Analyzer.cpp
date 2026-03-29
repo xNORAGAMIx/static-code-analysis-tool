@@ -13,6 +13,8 @@
 #include "../rules/HSCAP.1.3/ExplicitConstructorCheck.h"
 #include "../rules/HSCAP.1.4/MemberInitializationCheck.h"
 #include "../rules/HSCAP.0.2/SelfAssignmentCheck.h"
+#include "../rules/HSCAN.1.2/VirtualInheritanceMismatchCheck.h"
+
 
 
 Analyzer::Analyzer() {}
@@ -32,6 +34,7 @@ void Analyzer::registerRules() {
     rules.push_back(std::make_unique<ExplicitConstructorCheck>());
     rules.push_back(std::make_unique<MemberInitializationCheck>());
     rules.push_back(std::make_unique<SelfAssignmentCheck>());
+    rules.push_back(std::make_unique<VirtualInheritanceMismatchCheck>());
 }
 
 void Analyzer::setupMatchers() {
