@@ -70,9 +70,31 @@ sudo apt install -y build-essential cmake ninja-build git
 
 # Clang + LLVM development libraries (IMPORTANT)
 sudo apt install -y llvm-dev clang libclang-dev clang-tools
+
+# Faster build
+sudo apt install ccache
 ```
 
 ### RULES AND PROGRESS - GOOGLE DOCS
 ```
 https://docs.google.com/document/d/1G1QU9SAc30Ln2xjnRvo3pRjKRV3J0R3-S8BAYjIJUHI/edit?tab=t.fwe032of2ziy
+```
+
+## System Issue
+
+1. If build is slow, use ninja -j4 or ninja -j2 or ninja -j8 as per the number of cores your cpu has
+2. Build using ccache
+
+## Ccache commands
+
+```
+cmake -G Ninja \
+  -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+  -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
+  ..
+```
+
+## Verify ccache
+```
+ccache -s
 ```
