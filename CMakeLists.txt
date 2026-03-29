@@ -11,7 +11,7 @@ include_directories(${CLANG_INCLUDE_DIRS})
 
 add_definitions(${LLVM_DEFINITIONS})
 
-file(GLOB_RECURSE SOURCES
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
     core/*.cpp
     rules/*.cpp
     main.cpp
