@@ -8,6 +8,7 @@
 #include "../rules/HSCAG.4.2/NameHidingCheck.h"
 #include "../rules/HSCAG.8.3/DanglingPointerAssignmentCheck.h"
 #include "../rules/HSCAG.8.4/RefQualifierCheck.h"
+#include "../rules/HSCAP.1.1/DynamicTypeUsageCheck.h"
 
 
 Analyzer::Analyzer() {}
@@ -22,6 +23,7 @@ void Analyzer::registerRules() {
     rules.push_back(std::make_unique<NameHidingCheck>());
     rules.push_back(std::make_unique<DanglingPointerAssignmentCheck>());
     rules.push_back(std::make_unique<RefQualifierCheck>());
+    rules.push_back(std::make_unique<DynamicTypeUsageCheck>());
 }
 
 void Analyzer::setupMatchers() {
