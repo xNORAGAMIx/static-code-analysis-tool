@@ -7,6 +7,8 @@
 #include "../rules/HSCAA.2.4/UnusedFunctionCheck.h"
 #include "../rules/HSCAG.4.2/NameHidingCheck.h"
 #include "../rules/HSCAG.8.3/DanglingPointerAssignmentCheck.h"
+#include "../rules/HSCAG.8.4/RefQualifierCheck.h"
+
 
 Analyzer::Analyzer() {}
 
@@ -19,6 +21,7 @@ void Analyzer::registerRules() {
     rules.push_back(std::make_unique<UnusedFunctionCheck>());
     rules.push_back(std::make_unique<NameHidingCheck>());
     rules.push_back(std::make_unique<DanglingPointerAssignmentCheck>());
+    rules.push_back(std::make_unique<RefQualifierCheck>());
 }
 
 void Analyzer::setupMatchers() {
