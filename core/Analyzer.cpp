@@ -5,6 +5,7 @@
 #include "../rules/HSCAA.2.2/UnusedParameterCheck.h"
 #include "../rules/HSCAA.2.3/UnusedTypeCheck.h"
 #include "../rules/HSCAA.2.4/UnusedFunctionCheck.h"
+#include "../rules/HSCAG.4.2/NameHidingCheck.h"
 
 Analyzer::Analyzer() {}
 
@@ -15,6 +16,7 @@ void Analyzer::registerRules() {
     rules.push_back(std::make_unique<UnusedParameterCheck>());
     rules.push_back(std::make_unique<UnusedTypeCheck>());
     rules.push_back(std::make_unique<UnusedFunctionCheck>());
+    rules.push_back(std::make_unique<NameHidingCheck>());
 }
 
 void Analyzer::setupMatchers() {
