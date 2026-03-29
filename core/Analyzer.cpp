@@ -23,6 +23,7 @@
 #include "../rules/HSCAI.18.1/OverlappingCopyRule.h"
 #include "../rules/HSCAJ.4.1/IfElseMustEndWithElseRule.h"
 #include "../rules/HSCAV.6.2/NoRawNewDeleteRule.h"
+#include "../rules/HSCAV.6.3/NoAdvancedMemoryRule.h"
 Analyzer::Analyzer() {}
 
 void Analyzer::registerRules() {
@@ -50,6 +51,7 @@ void Analyzer::registerRules() {
     rules.push_back(std::make_unique<OverlappingCopyRule>());
     rules.push_back(std::make_unique<IfElseMustEndWithElseRule>());
     rules.push_back(std::make_unique<NoRawNewDeleteRule>());
+    rules.push_back(std::make_unique<NoAdvancedMemoryRule>());
 
 }
 
