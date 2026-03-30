@@ -11,14 +11,26 @@
 #include "../rules/HSCAP.1.1/DynamicTypeUsageCheck.h"
 #include "../rules/HSCAP.1.2/BaseInitializationCheck.h" 
 #include "../rules/HSCAP.1.3/ExplicitConstructorCheck.h"
+#include "../rules/HSCAN.3.1/VirtualSpecifierCheck.h"
+#include "../rules/HSCAN.3.2/VirtualFunctionDefaultArgsCheck.h"
+#include "../rules/HSCAS.1.1/ExceptionPointerCheck.h"
+#include "../rules/HSCAS.4.1/ExceptionNoexceptCheck.h"
+#include "../rules/HSCAI.2.1/VirtualBaseCastCheck.h"
+#include "../rules/HSCAI.2.2/CStyleAndFunctionalCastCheck.h"
+#include "../rules/HSCAI.2.3/ConstCastAwayQualifierRule.h"
+#include "../rules/HSCAI.2.5/ReinterpretCastRule.h"
+#include "../rules/HSCAI.2.6/InvalidCastToPointerRule.h"
+#include "../rules/HSCAI.18.1/OverlappingCopyRule.h"
+#include "../rules/HSCAJ.4.1/IfElseMustEndWithElseRule.h"
+#include "../rules/HSCAV.6.2/NoRawNewDeleteRule.h"
+#include "../rules/HSCAV.6.3/NoAdvancedMemoryRule.h"
+#include "../rules/HSCBC.6.3/UseAfterMoveRule.h"
 #include "../rules/HSCAP.1.4/MemberInitializationCheck.h"
 #include "../rules/HSCAP.0.2/SelfAssignmentCheck.h"
 #include "../rules/HSCAN.1.2/VirtualInheritanceMismatchCheck.h"
 #include "../rules/HSCAN.3.4/MemberFunctionPointerComparisonCheck.h"
 #include "../rules/HSCAR.8.1/FunctionTemplateSpecializationCheck.h"
 #include "../rules/HSCAS.4.1/NoexceptCheck.h"
-
-
 Analyzer::Analyzer() {}
 
 void Analyzer::registerRules() {
@@ -34,6 +46,20 @@ void Analyzer::registerRules() {
     rules.push_back(std::make_unique<DynamicTypeUsageCheck>());
     rules.push_back(std::make_unique<BaseInitializationCheck>());
     rules.push_back(std::make_unique<ExplicitConstructorCheck>());
+    rules.push_back(std::make_unique<VirtualSpecifierCheck>());
+    rules.push_back(std::make_unique<VirtualFunctionDefaultArgsCheck>());
+    rules.push_back(std::make_unique<ExceptionPointerCheck>());
+    rules.push_back(std::make_unique<ExceptionNoexceptCheck>());
+    rules.push_back(std::make_unique<VirtualBaseCastCheck>());
+    rules.push_back(std::make_unique<CStyleAndFunctionalCastCheck>());
+    rules.push_back(std::make_unique<ConstCastAwayQualifierRule>());
+    rules.push_back(std::make_unique<ReinterpretCastRule>());
+    rules.push_back(std::make_unique<InvalidCastToPointerRule>());
+    rules.push_back(std::make_unique<OverlappingCopyRule>());
+    rules.push_back(std::make_unique<IfElseMustEndWithElseRule>());
+    rules.push_back(std::make_unique<NoRawNewDeleteRule>());
+    rules.push_back(std::make_unique<NoAdvancedMemoryRule>());
+    rules.push_back(std::make_unique<UseAfterMoveRule>());
     rules.push_back(std::make_unique<MemberInitializationCheck>());
     rules.push_back(std::make_unique<SelfAssignmentCheck>());
     rules.push_back(std::make_unique<VirtualInheritanceMismatchCheck>());
